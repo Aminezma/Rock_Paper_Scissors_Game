@@ -1,38 +1,130 @@
 
-
-import sys
 import random
+import sys
 
-options_list = ['Rock','Paper','Scissor']
+print('ROCK, PAPER, SCISSORS')
 
-computer_player = random.choice(options_list)
+print('0 Wins, 0 Losses, 0 Ties')
 
-human_player = input('Choose either of the 3 options below:- \n 1.Rock \n  2.Paper \n 3.Scissor \n')
+human_score = 0
 
-score = 0
+options_list = ['r','p','s']
 
-while condition:
+computer_score = 0
 
-        # Computer Winning
-    if human_player == 'Rock' and computer_player == 'Paper':
-        print('Computer wins!!')
-        break
-    elif human_player == 'Scissor' and computer_player == 'Rock':
-        print('Computer wins!!')
-        break
-    elif human_player == 'Paper' and computer_player == 'Scissor':
-        print('Computer wins!!')
-        break
-        # Human Winning
-    elif human_player == 'Paper' and computer_player == 'Rock':
-        print('You win!!')
-        break
-    elif human_player == 'Rock' and computer_player == 'Scissor':
-        print('You win!!')
-        break
-    elif human_player == 'Scissor' and computer_player == 'Paper':
-        print('You win!!')
-        break
-        #sys.exit()
+tie = 0
 
-print('Thanks for playing this wonderful Game, have a nice day.')
+computer_move = random.choice(options_list)
+
+for i in range(10):
+
+    player_move = input('Enter your Move: (r)ock (p)aper (s)cissors or (q)uit \n')
+
+            # TIE GAME
+    if player_move == 'p' and computer_move == 'p':
+
+        print('It is a tie!')
+
+        computer_score = 0
+        human_score = 0
+        tie = tie + 1
+
+    elif player_move == 'r' and computer_move == 'r':
+
+        print('It is a tie!')
+
+        computer_score = 0
+        human_score = 0
+        tie = tie + 1
+
+
+    elif player_move == 's' and computer_move == 's':
+
+        print('It is a tie!')
+
+        computer_score = 0
+        human_score = 0
+        tie = tie + 1
+
+
+                # COMPUTER WINNING
+    elif player_move == 'p' and computer_move == 's':
+
+        print('Computer Wins!')
+
+        computer_score = computer_score + 1
+
+        human_score = 0
+
+        tie = 0
+
+
+    elif player_move == 's' and computer_move == 'r':
+
+
+        print('Computer Wins!')
+
+        computer_score = computer_score + 1
+
+        human_score = 0
+
+        tie = 0
+
+
+    elif player_move == 'r' and computer_move == 'p':
+
+
+        print('Computer Wins!')
+
+        computer_score = computer_score + 1
+
+        human_score = 0
+
+        tie = 0
+
+
+
+        # HUMAN WINNING
+    elif player_move == 's' and computer_move == 'p':
+
+
+        print('You Win!')
+
+        computer_score = 0
+
+        human_score = human_score + 1
+
+        tie = 0
+
+
+    elif player_move == 'r' and computer_move == 's':
+
+
+        print('You Win!')
+
+        computer_score = 0
+
+        human_score = human_score + 1
+
+        tie = 0
+
+    elif player_move == 'p' and computer_move == 'r':
+
+
+        print('You Win!')
+
+        computer_score = 0
+
+        human_score = human_score + 1
+
+        tie = 0
+
+    elif player_move == 'q':
+
+        print('Thank you for playing!')
+
+        sys.exit()
+
+
+
+print(str(human_score) + 'Wins, ' + str(computer_score) + 'Losses, ' +  str(tie) + 'Ties')
